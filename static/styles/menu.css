@@ -1,0 +1,129 @@
+@font-face{
+    font-family: "Cyberpunk";
+    src: url('/static/fonts/Cyberpunk.ttf');
+}
+@font-face{
+    font-family: "Play-Regular";
+    src: url('/static/fonts/Play-Regular.ttf');
+}
+@font-face{
+    font-family: "Play-Bold";
+    src: url('/static/fonts/Play-Bold.ttf');
+}
+@font-face{
+    font-family: "Rajdhani-Regular";
+    src: url('/static/fonts/Rajdhani-Regular.ttf');
+}
+@font-face{
+    font-family: "Rajdhani-Light";
+    src: url('/static/fonts/Rajdhani-Light.ttf');
+}
+@font-face{
+    font-family: "Rajdhani-Bold";
+    src: url('/static/fonts/Rajdhani-Bold.ttf');
+}
+@font-face{
+    font-family: "Rajdhani-SemiBold";
+    src: url('/static/fonts/Rajdhani-SemiBold.ttf');
+}
+@font-face{
+    font-family: "Rajdhani-Medium";
+    src: url('/static/fonts/Rajdhani-Medium.ttf');
+}
+
+body{
+    font-family: "Rajdhani-Medium";
+    background-color: rgb(152, 252, 252);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url('/static/images/cyberpunk-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+#menu{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 560px;
+    background-image: linear-gradient(
+        to bottom,
+        #732522 15%,
+        #31100f 45%,
+        rgba(0,0,0,0) 100%
+        );
+    border: 0px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 0 0 4px #f75049;
+    border-top: none;
+    border-bottom: none;
+    height: 100vh;
+    position: relative;
+    padding-top: 175px;
+}
+
+h1{
+    color: #fff001;
+    text-shadow:
+        3px 1px 0px #55bfd9,
+        3px 3px 2px #5ef6ff,
+        -10px 8px 2px #4a1917;
+    font-size: 80px;
+    font-family: "Cyberpunk";
+    position: absolute;
+    top: 0;
+    left: 10px;
+    z-index: 2;
+    background-color: transparent;
+}
+a{
+    font-size: 23px;
+    padding: 4px;
+    padding-right: 10px;
+    border: 1px solid rgba(0,0,0,0);
+    border-right: none;
+    color: #f75049;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 100ms ease-out;
+}
+a:link:active, a:visited:active{
+    color: #fff001;
+}
+a:hover{
+    background-color: rgb(75, 0, 0);
+    color: #5ef6ff;
+    border: 1px solid #5ef6ff;
+}
+#menu .a_oferty{
+    margin-top: 30px;
+}
+#menu a{
+    margin: 1px;
+    margin-top: 5px;
+    margin-left: 8px;
+}
+#menu button{
+    margin: 1px;
+    margin-left: 6px;
+}
+form{
+    margin-left: 2px;
+}
+button{
+    color: #f75049;
+    border: 1px solid rgba(0,0,0,0);
+    padding: 4px;
+    background: none;
+    font-family: "Rajdhani-Medium";
+    font-size: 23px;
+    padding-right: 224.5px;
+    transition: all 100ms ease-out;
+}
+button:hover{
+    background-color: rgb(75, 0, 0);
+    color: #5ef6ff;
+    border: 1px solid #5ef6ff;
+    cursor: pointer;
+}

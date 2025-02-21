@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='samurai.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/menu.css') }}">
+    <title>Strona główna - Job Me Up</title>
+</head>
+<body>
+    <h1>JOB ME UP</h1>
+    <div id="menu">
+        <a href="/oferty-pracy" class="a_oferty">WYŚWIETL WSZYSTKIE OFERTY PRACY</a><br>
+        <a href="/filtr" class="">FILTRUJ OFERTY</a><br>
+        <a href="/wizualizacje" class="">WIZUALIZACJE</a><br>
+        <form action="/eksport" method="get">
+            <button type="submit">EKSPORT PLIKU CSV BAZY DANYCH</button>
+        </form>
+    </div>
+</body>
+</html>

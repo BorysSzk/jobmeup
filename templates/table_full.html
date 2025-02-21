@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='samurai.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/table_full.css') }}">
+    <title>Oferty pracy - Robota.tej</title>
+</head>
+<body>
+    <div id="main">
+        <h1>WSZYSTKIE OFERTY PRACY</h1>
+        <a href="/">WRÓĆ</a>
+    </div>
+    <br>
+    <table border="1">
+        <tr>
+            <th>Zawód</th>
+            <th>Firma</th>
+            <th>Wymagania</th>
+            <th>Min. wynagrodzenie</th>
+            <th>Max. wynagrodzenie</th>
+            <th>Waluta</th>
+            <th>Miasto</th>
+            <th>Rodzaj zatrudnienia</th>
+            <th>Serwis</th>
+        </tr>
+        {% for job in job_offers %}
+        <tr>
+            <td>{{ job['title'] }}</td>
+            <td>{{ job['company'] }}</td>
+            <td>{{ job['requirements'] }}</td>
+            <td>{{ job['salary_from'] }}</td>
+            <td>{{ job['salary_to'] }}</td>
+            <td>{{ job['currency'] }}</td>
+            <td>{{ job['city'] }}</td>
+            <td>{{ job['employment_type'] }}</td>
+            <td>{{ job['source'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

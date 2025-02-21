@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Filtrowanie ofert pracy - Job Me Up</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='samurai.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/filter.css') }}">
+</head>
+<body>
+
+    <form id="filter-grid" method="GET" action="/filtr">
+        <h1 id="form-title">FILTROWANIE OFERT PRACY</h1>
+
+        <div id="filter-column">
+            <label for="title" id="title_label">ZAWÓD:</label>
+            <input type="text" id="title" name="title" value="{{ title_filter }}">
+
+            <label for="company" id="company_label">FIRMA:</label>
+            <input type="text" id="company" name="company" value="{{ company_filter }}">
+
+            <label for="requirements" id="requirements_label">WYMAGANIA (ODDZIELIĆ PRZECINKIEM):</label>
+            <input type="text" id="requirements" name="requirements" value="{{ requirements_filter }}">
+        </div>
+
+        <div id="filter-column">
+            <label for="salary_from" id="salary_from_label">MINIMALNE WYNAGRODZENIE (LICZBA CAŁKOWITA):</label>
+            <input type="number" id="salary_from" name="salary_from" value="{{ salary_from_filter }}">
+
+            <label for="salary_to" id="salary_to_label">MAKSYMALNE WYNAGRODZENIE (LICZBA CAŁKOWITA):</label>
+            <input type="number" id="salary_to" name="salary_to" value="{{ salary_to_filter }}">
+
+            <label for="currency" id="currency_label">WALUTA:</label>
+            <input type="text" id="currency" name="currency" value="{{ currency_filter }}">
+
+            <label for="undisclosed_salary_and_currency" id="undisclosed_salary_and_currency_label">
+                <div class="checkbox-wrapper">
+                <input type="checkbox" id="undisclosed_salary_and_currency" class="checkbox-button-1" name="undisclosed_salary_and_currency_filter"
+                    {% if undisclosed_salary_and_currency_filter == 'on' %}checked{% endif %}>
+                    <span class="checkbox-text">&nbspNIEUJAWNIONE WYNAGRODZENIE I WALUTA</span>
+                </div>
+            </label>
+        </div>
+
+        <div id="filter-column">
+            <label for="city" id="city_label">MIASTO:</label>
+            <input type="text" id="city" name="city" value="{{ city_filter }}">
+
+            <label for="employment_type" id="employment_type_label">RODZAJ ZATRUDNIENIA:</label>
+            <select id="employment_type" name="employment_type" onchange=" this.dataset.chosen = this.value; ">
+                <option value="">WSZYSTKIE</option>
+                <option value="B2B" {% if employment_type_filter == 'B2B' %}selected{% endif %}>B2B</option>
+                <option value="Permanent" {% if employment_type_filter == 'Permanent' %}selected{% endif %}>STAŁE</option>
+                <option value="UoP" {% if employment_type_filter == 'UoP' %}selected{% endif %}>UMOWA O PRACĘ</option>
+                <option value="Mandate" {% if employment_type_filter == 'Mandate' %}selected{% endif %}>UMOWA O ZLECENIE</option>
+                <option value="Dowolna" {% if employment_type_filter == 'Dowolna' %}selected{% endif %}>DOWOLNE</option>
+                <option value="Nieujawnione" {% if employment_type_filter == 'Nieujawnione' %}selected{% endif %}>NIEUJAWNIONE</option>
+            </select>
+
+            <label for="source" id="source_label">SERWIS OFERT PRACY:</label>
+            <select id="source" name="source">
+                <option value="">WSZYSTKIE</option>
+                <option value="justjoinit" {% if source_filter == 'justjoinit' %}selected{% endif %}>JUST JOIN IT</option>
+                <option value="nofluffjobs" {% if source_filter == 'nofluffjobs' %}selected{% endif %}>NO FLUFF JOBS</option>
+                <option value="rocketjobs" {% if source_filter == 'rocketjobs' %}selected{% endif %}>ROCKETJOBS</option>
+            </select>
+        </div>
+
+        <div id="filter-column">
+            <button type="submit" id="filter-button">FILTRUJ</button>
+            <button type="submit" name="clear" value="true" id="clear-filters-button">WYCZYŚĆ FILTRY</button>
+            <a href="/">WRÓĆ</a>
+        </div>
+    </form>
+
+
+    <table>
+        <tr>
+            <th>ZAWÓD</th>
+            <th>FIRMA</th>
+            <th>WYMAGANIA</th>
+            <th>
+                MIN. WYNAGRODZENIE<br>
+                <button id="sort-btn" onclick="sortTable('salary_from', 'ASC')">▲</button>
+                <button id="sort-btn" onclick="sortTable('salary_from', 'DESC')">▼</button>
+            </th>
+            <th>
+                MAKS. WYNAGRODZENIE<br>
+                <button id="sort-btn" onclick="sortTable('salary_to', 'ASC')">▲</button>
+                <button id="sort-btn" onclick="sortTable('salary_to', 'DESC')">▼</button>
+            </th>
+            <th>WALUTA</th>
+            <th>MIASTO</th>
+            <th>RODZAJ ZATRUDNIENIA</th>
+            <th>SERWIS OFERT PRACY</th>
+        </tr>
+        {% for job in job_offers %}
+        <tr>
+            <td>{{ job['title'] }}</td>
+            <td>{{ job['company'] }}</td>
+            <td>{{ job['requirements'] }}</td>
+            <td>{{ job['salary_from'] }}</td>
+            <td>{{ job['salary_to'] }}</td>
+            <td>{{ job['currency'] }}</td>
+            <td>{{ job['city'] }}</td>
+            <td>{{ job['employment_type'] }}</td>
+            <td>{{ job['source'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <script src="{{ url_for('static',filename='scripts/filter.js') }}"></script>
+</body>
+</html>

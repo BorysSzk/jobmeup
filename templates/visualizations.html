@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='samurai.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/visualizations.css') }}">
+    <title>Wizualizacje - Job Me Up</title>
+</head>
+<body>
+    <div id="visualizations-menu">
+        <h1>WIZUALIZACJE</h1>
+
+        <h2>KLIKNIJ, ABY POBRAĆ:</h2><hr>
+        <a href="{{ url_for('static', filename='plots/jobs_per_city_bar_plot.png') }}" download="jobs_per_city_bar_plot.png">WYKRES LICZBY OFERT PRACY <br>W DANYM MIEŚCIE</a><hr>
+        <a href="{{ url_for('static', filename='plots/highest_max_salaries_per_city_bar_plot.png') }}" download="highest_max_salaries_per_city_bar_plot.png">WYKRES NAJWYŻSZYCH MAKSYMALNYCH WYNAGRODZEŃ <br>W DANYM MIEŚCIE</a><hr>
+        <a href="{{ url_for('static', filename='plots/lowest_min_salaries_per_city_bar_plot.png') }}" download="lowest_min_salaries_per_city_bar_plot.png">WYKRES NAJNIŻSZYCH MINIMALNYCH WYNAGRODZEŃ <br>W DANYM MIEŚCIE</a><hr>
+        <a href="{{ url_for('static', filename='plots/employment_types_pie_chart.png') }}" download="employment_types_pie_chart.png">WYKRES RODZAJÓW ZATRUDNIENIA</a><hr>
+        <a href="/" id="go-back">WRÓĆ</a>
+    </div>
+
+    <div id="plots-container-left">
+        <div>
+            <img src="{{ url_for('static', filename='plots/jobs_per_city_bar_plot.png') }}" alt="Wykres1" id="plot1">
+        </div>
+
+        <div>
+            <img src="{{ url_for('static', filename='plots/highest_max_salaries_per_city_bar_plot.png') }}" alt="Wykres2" id="plot2">
+        </div>
+    </div>
+
+    <div id="plots-container-right">
+        <div>
+            <img src="{{ url_for('static', filename='plots/employment_types_pie_chart.png') }}" alt="Wykres4" id="plot4">
+        </div>
+
+        <div>
+            <img src="{{ url_for('static', filename='plots/lowest_min_salaries_per_city_bar_plot.png') }}" alt="Wykres3" id="plot3">
+        </div>
+    </div>
+</body>
+</html>

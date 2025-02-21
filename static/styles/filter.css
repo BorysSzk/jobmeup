@@ -1,0 +1,281 @@
+@font-face{
+    font-family: "Cyberpunk";
+    src: url('/static/fonts/Cyberpunk.ttf');
+}
+@font-face{
+    font-family: "Play-Regular";
+    src: url('/static/fonts/Play-Regular.ttf');
+}
+@font-face{
+    font-family: "Play-Bold";
+    src: url('/static/fonts/Play-Bold.ttf');
+}
+@font-face{
+    font-family: "Rajdhani-Regular";
+    src: url('/static/fonts/Rajdhani-Regular.ttf');
+}
+@font-face{
+    font-family: "Rajdhani-Light";
+    src: url('/static/fonts/Rajdhani-Light.ttf');
+}
+@font-face{
+    font-family: "Rajdhani-Bold";
+    src: url('/static/fonts/Rajdhani-Bold.ttf');
+}
+@font-face{
+    font-family: "Rajdhani-SemiBold";
+    src: url('/static/fonts/Rajdhani-SemiBold.ttf');
+}
+@font-face{
+    font-family: "Rajdhani-Medium";
+    src: url('/static/fonts/Rajdhani-Medium.ttf');
+}
+
+body{
+    font-family: "Rajdhani-Medium";
+    background-color: #03080a;
+    height: 100vh;
+}
+table{
+    color:#f75049;
+    border: 1px solid #f75049;
+    border-collapse: collapse;
+}
+th{
+    background-color: #08080c;
+    font-family: "Rajdhani-Regular";
+    border: 1px solid #7f2825;
+}
+tr{
+    background-color: #0c0c14;
+    font-family: "Rajdhani-Medium";
+}
+td{
+    font-family: "Rajdhani-Medium";
+    border: 1px solid #f75049;
+}
+
+#filter-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: -20px;
+    margin-bottom: 50px;
+    height: 450px;
+    padding: 15px;
+    align-items: start;
+    background-color: #0c0c14;
+    border: 2px solid #5ef6ff;
+    border-left: none;
+    border-right: none;
+}
+#form-title{
+    font-family: "Rajdhani-SemiBold";
+    grid-column: 1 / span 4;
+    margin-bottom: -40px;
+    text-align: left;
+    color: #5ef6ff;
+    text-shadow: 
+        2px 1px 1px #42b0b6,
+        -7px 8px 5px #09191f;
+    font-size: 60px;
+    font-family: "Rajdhani-SemiBold";
+}
+#filter-column{
+    font-family: "Rajdhani-Medium";
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #f75049;
+    font-size: 20px;
+}
+
+label{
+    color: #f75049;
+}
+input{
+    font-family: "Rajdhani-Medium";
+    color: #f75049;
+    font-size: 18px;
+    border: 1px solid #f75049;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    background-color: transparent;
+}
+input:focus{
+    outline: none;
+    color: #5ef6ff;
+    border: 1px solid #5ef6ff;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    background-color: rgb(40, 0, 0);
+}
+form:has(#title:focus) #title_label{color: #5ef6ff;}
+form:has(#company:focus) #company_label{color: #5ef6ff;}
+form:has(#requirements:focus) #requirements_label{color: #5ef6ff;}
+form:has(#salary_from:focus) #salary_from_label{color: #5ef6ff;}
+form:has(#salary_to:focus) #salary_to_label{color: #5ef6ff;}
+form:has(#currency:focus) #currency_label{color: #5ef6ff;}
+form:has(#undisclosed_salary_and_currency:focus) #undisclosed_salary_and_currency_label{color: #5ef6ff;}
+form:has(#city:focus) #city_label{color: #5ef6ff;}
+form:has(#employment_type:focus) #employment_type_label{color: #5ef6ff;}
+form:has(#source:focus) #source_label{color: #5ef6ff;}
+
+input[type="number"]{
+    -moz-appearance:textfield;
+}
+
+.checkbox-wrapper .checkbox-button-1 {
+    appearance: none;
+    background-color: #f75049;
+    border-style: none;
+    transform: skew(-10deg);
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    flex-shrink: 0;
+    height: 14px;
+    margin: 0;
+    position: relative;
+    width: 30px;
+}
+.checkbox-wrapper .checkbox-button-1,
+.checkbox-wrapper .checkbox-button-1::after {
+    transition: all 100ms ease-out;
+}
+
+.checkbox-wrapper .checkbox-button-1::after {
+    background-color: rgb(40, 0, 0);
+    content: "";
+    height: 8px;
+    left: 3px;
+    position: absolute;
+    top: 3px;
+    width: 8px;
+}
+
+.checkbox-wrapper input[type=checkbox] {
+    cursor: default;
+}
+
+.checkbox-wrapper .checkbox-button-1:hover {
+    background-color: #5ef6ff;
+    transition-duration: 0s;
+}
+
+.checkbox-wrapper .checkbox-button-1:checked {
+    background-color: #378185;
+}
+
+.checkbox-button-1:checked + .checkbox-text {
+    color: #5ef6ff;
+}
+
+.checkbox-wrapper .checkbox-button-1:checked::after {
+    background-color: #5ef6ff;
+    left: 19px;}
+
+.checkbox-wrapper :focus:not(.focus-visible) {
+    outline: 0;
+}
+
+.checkbox-wrapper .checkbox-button-1:checked:hover {
+  background-color: #f75049;
+}
+
+select{
+    background-color: transparent;
+    color: #f75049;
+    border: 1px solid #f75049;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    font-family: "Rajdhani-Medium";
+    font-size: 18px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+select:focus{
+    color: #5ef6ff;
+    border: 1px solid #5ef6ff;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+}
+select[data-chosen='B2B'] {outline:#5ef6ff; color: #5ef6ff;}
+select[data-chosen='Permanent'] {outline-color:#5ef6ff; color: #5ef6ff;}
+select[data-chosen='UoP'] {outline-color:#5ef6ff; color: #5ef6ff;}
+select[data-chosen='Mandate'] {outline-color:#5ef6ff; color: #5ef6ff;}
+select[data-chosen='Dowolna'] {outline-color:#5ef6ff; color: #5ef6ff;}
+select[data-chosen='Nieujawnione'] {outline-color:#5ef6ff; color: #5ef6ff;}
+select[data-chosen='justjoinit'] {outline-color:#5ef6ff; color: #5ef6ff;}
+select[data-chosen='nofluffjobs'] {outline-color:#5ef6ff; color: #5ef6ff;}
+select[data-chosen='rocketjobs'] {outline-color:#5ef6ff; color: #5ef6ff;}
+
+select option{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+    font-size: 18px !important;
+    color: #f75049;
+}
+
+
+#filter-button, #clear-filters-button{
+    color: #f75049;
+    border: 1px solid rgba(0,0,0,0);
+    background: none;
+    font-family: "Rajdhani-Medium";
+    font-size: 50px;
+    text-align: left;
+    transition: all 100ms ease-out;
+}
+#filter-button{
+    padding-top: -10px;
+}
+#filter-button:hover, #clear-filters-button:hover{
+    background-color: rgb(40, 0, 0);
+    color: #5ef6ff;
+    border: 1px solid #5ef6ff;
+    cursor: pointer;
+}
+a{
+    font-size: 50px;
+    margin-top: 5px;
+    padding: 4px;
+    padding-right: 10px;
+    border: 1px solid rgba(0,0,0,0);
+    color: #f75049;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 100ms ease-out;
+}
+a:link:active, a:visited:active{
+    color: #fff001;
+}
+a:hover{
+    background-color: rgb(40, 0, 0);
+    color: #5ef6ff;
+    border: 1px solid #5ef6ff;
+}
+#sort-btn{
+    color: #f75049;
+    background: none;
+    font-family: "Rajdhani-Medium";
+    font-size: 50px;
+    text-align: left;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0;
+    transition: all 100ms ease-out;
+}
+#sort-btn:hover{
+    color: #5ef6ff;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+#sort-btn:focus{
+    outline: none;
+}
+

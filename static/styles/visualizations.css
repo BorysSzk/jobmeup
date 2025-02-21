@@ -1,0 +1,119 @@
+@font-face{
+    font-family: "Cyberpunk";
+    src: url('/static/fonts/Cyberpunk.ttf');
+}
+@font-face{
+    font-family: "Play-Regular";
+    src: url('/static/fonts/Play-Regular.ttf');
+}
+@font-face{
+    font-family: "Play-Bold";
+    src: url('/static/fonts/Play-Bold.ttf');
+}
+@font-face{
+    font-family: "Rajdhani-Regular";
+    src: url('/static/fonts/Rajdhani-Regular.ttf');
+}
+@font-face{
+    font-family: "Rajdhani-Light";
+    src: url('/static/fonts/Rajdhani-Light.ttf');
+}
+@font-face{
+    font-family: "Rajdhani-Bold";
+    src: url('/static/fonts/Rajdhani-Bold.ttf');
+}
+@font-face{
+    font-family: "Rajdhani-SemiBold";
+    src: url('/static/fonts/Rajdhani-SemiBold.ttf');
+}
+@font-face{
+    font-family: "Rajdhani-Medium";
+    src: url('/static/fonts/Rajdhani-Medium.ttf');
+}
+
+body{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+    font-family: "Rajdhani-Medium";
+    background-color: white;
+    /*overflow: hidden;*/
+}
+#visualizations-menu{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    background-image: linear-gradient(
+        to bottom,
+        #2f2f2a 15%,
+        #24241c 75%,
+        rgba(0,0,0,0) 100%
+        );
+    border: 0px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 0 0 6px #8ce4fc;
+    border-top: none;
+    border-bottom: none;
+    font-size: 20px;
+    height: 100vh;
+}
+#plots-container-left{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    margin-left: 10px;
+    flex-grow: 1;
+    width: 100%;
+}
+#plots-container-right{
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+    gap: 79px;
+    padding: 20px;
+}
+h1{
+    color: #8cdcfc;
+    text-shadow: 
+        3px 1px 1px rgb(0, 179, 179),
+        -7px 8px 5px #1a1a14;
+    font-size: 60px;
+    font-family: "Rajdhani-SemiBold";
+}
+h2{
+    color: #8ce4fc;
+    font-family: "Rajdhani-Regular";
+}
+a{
+    padding: 2px;
+    padding-right: 10px;
+    color: #8ce4fc;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 100ms ease-out;
+}
+a:link:active, a:visited:active{
+    color: #fff001;
+}
+a:hover{
+    background-color: #8ce4fc;
+    color: #24241c;
+}
+#visualizations-menu a{
+    margin: 1px;
+    margin-left: 8px;
+}
+#visualizations-menu h1, h2{
+    margin-left: 8px;
+}
+#visualizations-menu #go-back{
+    margin-top: 20px;
+}
+#visualizations-menu hr{
+    width: 400px;
+    color: #75c0d5;
+}

@@ -1,0 +1,92 @@
+@font-face{
+    font-family: "Cyberpunk";
+    src: url('/static/fonts/Cyberpunk.ttf');
+}
+@font-face{
+    font-family: "Play-Regular";
+    src: url('/static/fonts/Play-Regular.ttf');
+}
+@font-face{
+    font-family: "Play-Bold";
+    src: url('/static/fonts/Play-Bold.ttf');
+}
+@font-face{
+    font-family: "Rajdhani-Regular";
+    src: url('/static/fonts/Rajdhani-Regular.ttf');
+}
+@font-face{
+    font-family: "Rajdhani-Light";
+    src: url('/static/fonts/Rajdhani-Light.ttf');
+}
+@font-face{
+    font-family: "Rajdhani-Bold";
+    src: url('/static/fonts/Rajdhani-Bold.ttf');
+}
+@font-face{
+    font-family: "Rajdhani-SemiBold";
+    src: url('/static/fonts/Rajdhani-SemiBold.ttf');
+}
+@font-face{
+    font-family: "Rajdhani-Medium";
+    src: url('/static/fonts/Rajdhani-Medium.ttf');
+}
+
+body{
+    font-family: "Rajdhani-Medium";
+    background-color: #03080a;
+    height: 100vh;
+}
+#main{
+    margin-left: 8px;
+}
+table{
+    margin-top: 20px;
+    color:#f75049;
+    border: 1px solid #f75049;
+    border-collapse: collapse;
+}
+th{
+    background-color: #08080c;
+    font-family: "Rajdhani-Regular";
+    border: 2px solid #f75049;
+}
+tr{
+    background-color: #0c0c14;
+    font-family: "Rajdhani-Medium";
+    border: 1px solid #f75049;
+}
+td{
+    font-family: "Rajdhani-Medium";
+    border: 1px solid #f75049;
+}
+
+h1{
+    font-family: "Rajdhani-SemiBold";
+    grid-column: 1 / span 4;
+    text-align: left;
+    color: #5ef6ff;
+    font-size: 60px;
+    font-family: "Rajdhani-SemiBold";
+    text-shadow: 
+        2px 2px 1px #42b0b6,
+        -7px 8px 5px #09191f;
+}
+a{
+    font-size: 40px;
+    margin-top: 5px;
+    padding: 4px;
+    padding-right: 10px;
+    border: 1px solid rgba(0,0,0,0);
+    color: #f75049;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 100ms ease-out;
+}
+a:link:active, a:visited:active{
+    color: #fff001;
+}
+a:hover{
+    background-color: rgb(40, 0, 0);
+    color: #5ef6ff;
+    border: 1px solid #5ef6ff;
+}
