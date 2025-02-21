@@ -1,7 +1,7 @@
 # Job Me Up
 
 ## What is Job Me Up?
-Job Me Up is a Python web scraper for IT job boards using BeautifulSoup & Selenium, storing data in an SQLite3 database, with a user-friendly Flask web app for filtering and a few example Pyplot visualizations. Scrape job offers, save them in a database and familiarize
+Job Me Up is a Python web scraper for IT job boards using BeautifulSoup & Selenium, storing data in an SQLite3 database, with a user-friendly themed Flask web app for filtering and a few example Pyplot visualizations. Scrape job offers, save them in a database and familiarize
 yourself with the scraped data through viewing and filtering the data with the addition of a couple of sample visualizations that will give you a general view of job offer analysis.
 
 ## Build Prerequisites
