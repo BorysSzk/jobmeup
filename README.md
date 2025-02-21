@@ -12,7 +12,7 @@ Job Me Up's build environment requires a couple of libraries in order to work, b
 ## Installation
 Clone the repository to your computer with:
 ```sh
-git clone https://github.com/your_username/your_repo.git
+git clone https://github.com/BorysSzk/jobmeup.git
 ```
 If you don't have Git installed, you can download the repository as a ZIP file from the repository page.
 <br>
