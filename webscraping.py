@@ -28,7 +28,7 @@ def fetch_justjoinit():
 
     job_offers = soup.select('div[class^="MuiBox-root css-1jbajow"]')
     for job in job_offers:
-        title = job.find('h3', class_='css-1gehlh0').text if job.find('h3', class_='css-1gehlh0') else None
+        title = job.find('h3', class_='css-1gehlh0').text if job.find('h3', class_='css-1gehlh0') else "Nieujawnione"
 
         salary_div = job.find('div', class_='MuiBox-root css-18ypp16')
         if salary_div:
@@ -42,20 +42,20 @@ def fetch_justjoinit():
                     salary_to = salary_spans[1].text.strip()
                     currency = salary_spans[2].text.strip()
                 else:
-                    salary_from = salary_to = currency = None
+                    salary_from = salary_to = currency = "Nieujawnione"
         else:
-            salary_from = salary_to = currency = None
+            salary_from = salary_to = currency = "Nieujawnione"
 
         company_div = job.find('div', class_='MuiBox-root css-1kb0cuq')
         company = company_div.find('span') if company_div else None
-        company_text = company.text if company else None
+        company_text = company.text if company else "Nieujawnione"
 
         requirements_elements = job.find_all('div', class_='MuiBox-root css-jikuwi')
         requirements = [req.text.strip() for req in requirements_elements if req.text.strip() not in ["New"]]
 
         city_div = job.find('div', class_='MuiBox-root css-1un5sk1')
         city = city_div.find('span') if city_div else None
-        city_text = city.text if city else None
+        city_text = city.text if city else "Nieujawnione"
 
         link_div = job.find('div', class_='MuiBox-root css-ai36e1')
         link = link_div.find('a', href=True) if link_div else None
@@ -68,12 +68,12 @@ def fetch_justjoinit():
                     By.XPATH,
                     "//div[text()='Employment Type']/following-sibling::div"
                 )
-                employment_type = employment_type_element.text.strip() if employment_type_element else None
+                employment_type = employment_type_element.text.strip() if employment_type_element else "Nieujawnione"
             except Exception as e:
-                employment_type = None
+                employment_type = "Nieujawnione"
                 print(f"Error finding Employment TypeJJ: {e}")
         else:
-            employment_type = None
+            employment_type = "Nieujawnione"
 
         data.append({'title': title, 
                      'company': company_text,
@@ -124,7 +124,7 @@ def fetch_nofluffjobs():
                 salary_from = salary_to = currency = "Nieujawnione"
             
             city_element = job.find_element(By.CSS_SELECTOR, 'span[class^="tw-text-ellipsis"]')
-            city = city_element.text.strip() if city_element else None
+            city = city_element.text.strip() if city_element else "Nieujawnione"
 
             requirement_elements = job.find_elements(By.CSS_SELECTOR, 'nfj-posting-item-tiles.ng-star-inserted span.posting-tag')
             requirements = [req.text.strip() for req in requirement_elements if req.text.strip()]
@@ -192,7 +192,7 @@ def fetch_rocketjobs():
 
     job_offers = soup.select('div[class^="MuiBox-root css-q5j1fs"]')
     for job in job_offers:
-        title = job.find('h3', class_="css-vgztiw").text if job.find('h3', class_="css-vgztiw") else None
+        title = job.find('h3', class_="css-vgztiw").text if job.find('h3', class_="css-vgztiw") else "Nieujawnione"
 
         salary_div = job.find('div', class_='MuiBox-root css-606a0h')
         if salary_div:
@@ -208,14 +208,14 @@ def fetch_rocketjobs():
 
         company_div = job.find('div', class_='MuiBox-root css-1lztmxj')
         company = company_div.find('span') if company_div else None
-        company_text = company.text if company else None
+        company_text = company.text if company else "Nieujawnione"
 
         requirements_elements = job.find_all('div', class_='MuiBox-root css-jikuwi')
         requirements = [req.text.strip() for req in requirements_elements if req.text.strip() not in ["Nowa"]]
 
         city_div = job.find('div', class_='MuiBox-root css-ll20ho')
         city = city_div.find('span') if city_div else None
-        city_text = city.text if city else None
+        city_text = city.text if city else "Nieujawnione"
 
         link_div = job.find('div', class_="MuiBox-root css-15buo37")
         link = job.find('a', href=True) if link_div else None
@@ -228,12 +228,12 @@ def fetch_rocketjobs():
                     By.XPATH,
                     "//div[text()='Forma zatrudnienia']/following-sibling::div"
                 )
-                employment_type = employment_type_element.text.strip() if employment_type_element else None
+                employment_type = employment_type_element.text.strip() if employment_type_element else "Nieujawnione"
             except Exception as e:
-                employment_type = None
+                employment_type = "Nieujawnione"
                 print(f"Error finding Employment TypeRJ: {e}")
         else:
-            employment_type = None
+            employment_type = "Nieujawnione"
         
         data.append({'title': title, 
                      'company': company_text, 
