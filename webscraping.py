@@ -21,7 +21,7 @@ def fetch_justjoinit():
 
     options = Options()
     options.add_argument('--headless')
-    service = Service('geckodriver-v0.34.0-win64/geckodriver.exe')
+    service = Service('geckodriver/geckodriver.exe')
     driver = webdriver.Firefox(service=service, options=options)
 
     data = []
@@ -84,6 +84,7 @@ def fetch_justjoinit():
                      'employment_type': employment_type
                     })
 
+    driver.quit()
     return pd.DataFrame(data)
 
 
@@ -95,7 +96,7 @@ def fetch_nofluffjobs():
     '''
     options = Options()
     options.add_argument('--headless')
-    service = Service('geckodriver-v0.34.0-win64/geckodriver.exe')
+    service = Service('geckodriver/geckodriver.exe')
     driver = webdriver.Firefox(service=service, options=options)
     driver.get("https://nofluffjobs.com/pl")
 
@@ -183,7 +184,7 @@ def fetch_rocketjobs():
 
     options = Options()
     options.add_argument('--headless')
-    service = Service('geckodriver-v0.34.0-win64/geckodriver.exe')
+    service = Service('geckodriver/geckodriver.exe')
     driver = webdriver.Firefox(service=service, options=options)
 
     data = []
@@ -242,6 +243,8 @@ def fetch_rocketjobs():
                      'employment_type': employment_type
                     })
 
+
+    driver.quit()
     return pd.DataFrame(data)
         
 
