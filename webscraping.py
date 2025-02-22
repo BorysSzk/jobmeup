@@ -26,7 +26,7 @@ def fetch_justjoinit():
 
     data = []
 
-    job_offers = soup.select('li[class^="MuiBox-root"]')
+    job_offers = soup.select('div[class^="MuiBox-root css-1jbajow"]')
     for job in job_offers:
         title = job.find('h3', class_='css-1gehlh0').text if job.find('h3', class_='css-1gehlh0') else None
 
@@ -57,7 +57,8 @@ def fetch_justjoinit():
         city = city_div.find('span') if city_div else None
         city_text = city.text if city else None
 
-        link = job.find('a', class_='offer_list_offer_link', href=True)
+        link_div = job.find('div', class_='MuiBox-root css-ai36e1')
+        link = link_div.find('a', href=True) if link_div else None
         job_url = f"https://justjoin.it{link['href']}" if link else None
 
         if job_url:
@@ -189,7 +190,7 @@ def fetch_rocketjobs():
 
     data = []
 
-    job_offers = soup.select('li[class^="MuiBox-root"]')
+    job_offers = soup.select('div[class^="MuiBox-root css-q5j1fs"]')
     for job in job_offers:
         title = job.find('h3', class_="css-vgztiw").text if job.find('h3', class_="css-vgztiw") else None
 
@@ -216,7 +217,8 @@ def fetch_rocketjobs():
         city = city_div.find('span') if city_div else None
         city_text = city.text if city else None
 
-        link = job.find('a', class_='offer_list_offer_link', href=True)
+        link_div = job.find('div', class_="MuiBox-root css-15buo37")
+        link = job.find('a', href=True) if link_div else None
         job_url = f"https://rocketjobs.pl{link['href']}" if link else None
 
         if job_url:
