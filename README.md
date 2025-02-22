@@ -17,7 +17,7 @@ git clone https://github.com/BorysSzk/jobmeup.git
 ```
 If you don't have Git installed, you can download the repository as a ZIP file from the repository page.
 
-After cloning/downloading the repository, navigate to the project directory (`project` folder) in your terminal and run the following command to install the libraries:
+After cloning/downloading the repository, navigate to the project directory (`jobmeup-main` folder) in your terminal and run the following command to install the libraries:
 ```sh
 pip install -r requirements.txt
 ```
