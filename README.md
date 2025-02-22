@@ -6,8 +6,9 @@ yourself with the scraped data through viewing and filtering the data with the a
 
 ## Build Prerequisites
 Job Me Up's build environment requires a couple of libraries in order to work, but before that make sure that you have downloaded and using:
-- Python 3.11.9 or newer from [here](https://www.python.org/downloads/).
-- Firefox browser, required for Selenium with geckodriver.
+- Python 3.11.9 or newer from [here](https://www.python.org/downloads/);
+- Firefox browser, required for Selenium with geckodriver;
+- Geckodriver, required for Selenium and Firefox (installation down below).
 
 ## Installation
 Clone the repository to your computer with:
@@ -16,7 +17,7 @@ git clone https://github.com/BorysSzk/jobmeup.git
 ```
 If you don't have Git installed, you can download the repository as a ZIP file from the repository page.
 
-After cloning/downloading the repository, navigate to the project directory (`project` folder) in your terminal and run the following command to install the libraries:
+After cloning/downloading the repository, navigate to the project directory (`jobmeup-main` folder) in your terminal and run the following command to install the libraries:
 ```sh
 pip install -r requirements.txt
 ```
