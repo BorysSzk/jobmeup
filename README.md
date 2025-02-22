@@ -8,6 +8,7 @@ yourself with the scraped data through viewing and filtering the data with the a
 Job Me Up's build environment requires a couple of libraries in order to work, but before that make sure that you have downloaded and using:
 - Python 3.11.9 or newer from [here](https://www.python.org/downloads/).
 - Firefox browser, required for Selenium with geckodriver.
+- Geckodriver, required for Selenium and Firefox (installation down below)
 
 ## Installation
 Clone the repository to your computer with:
